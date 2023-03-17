@@ -1,15 +1,8 @@
-import informationStore, { InformationStore } from "@/stores/informationStore";
+import informationStore from "@/stores/informationStore";
 import { observer } from "mobx-react-lite";
-import { toJS } from "mobx";
 import Head from "next/head";
-import { useState } from "react";
-import { modalStore } from "@/stores/modalStore";
 
 const Home = observer(() => {
-  // const [informationStore] = useState(() => new InformationStore());
-
-  console.log(informationStore.toJson());
-
   function hsndleSubmit(event: React.FormEvent) {
     event.preventDefault();
   }
@@ -75,12 +68,6 @@ const Home = observer(() => {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div>
-          <button onClick={() => modalStore.toggle()}>
-            modal {String(modalStore.isOpen)}
-          </button>
         </div>
       </main>
     </>
